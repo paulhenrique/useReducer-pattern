@@ -1,12 +1,10 @@
 import { useReducer, createContext, useContext, useMemo } from "react";
-import { Counter } from "./reducers";
-
-const initialState = { count: 0 };
+import { Counter, counterState } from "./reducers";
 
 export const GlobalContext = createContext();
 
 function StoreProvider(props) {
-  const [state, dispatch] = useReducer(Counter, initialState);
+  const [state, dispatch] = useReducer(Counter, counterState);
   const store = useMemo(() => [state, dispatch], [state]);
 
   return (

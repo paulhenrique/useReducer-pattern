@@ -1,3 +1,5 @@
+export const counterState = { count: 0 };
+
 function counterReducer(state, action) {
   switch (action.type) {
     case "increment":
