@@ -1,5 +1,5 @@
-import GlobalContextProvider from "./store";
-import { Counter } from "./components";
+import GlobalContextProvider from "../store";
+import { Counter } from "../components";
 
 function JoinCounter() {
   return (
