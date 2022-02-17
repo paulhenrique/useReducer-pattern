@@ -1,7 +1,7 @@
 import GlobalContextProvider from "../store";
 import { Counter } from "../components";
 
-function JoinCounter() {
+function App() {
   return (
     <GlobalContextProvider>
       <Counter />
@@ -9,4 +9,4 @@ function JoinCounter() {
     </GlobalContextProvider>
   );
 }
-export default JoinCounter;
+export default App;
