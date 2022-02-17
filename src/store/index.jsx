@@ -1,23 +1,14 @@
 import { useReducer, createContext, useContext, useMemo } from "react";
+import { Counter } from "./reducers";
 
 const initialState = { count: 0 };
 
 export const GlobalContext = createContext();
 
-function storeReducer(state, action) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
-    default:
-      throw new Error();
-  }
-}
-
 function StoreProvider(props) {
-  const [state, dispatch] = useReducer(storeReducer, initialState);
+  const [state, dispatch] = useReducer(Counter, initialState);
   const store = useMemo(() => [state, dispatch], [state]);
+
   return (
     <GlobalContext.Provider value={store}>
       {props?.children}
